@@ -1,0 +1,21 @@
+﻿@using HtmlAgilityPack;
+@{
+    ViewBag.Title = "Hava Durumu Botu";
+}
+<h4>Haber Botu</h4>
+<div id="haberler"></div>
+@section scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#haberler").html("<b>Haberler Yükleniyor...</b>");
+        $("#haberler").load("http://localhost:59188/Home/HaberBotu");
+    });
+</script>
+}
+<style type="text/css">
+    #haberler ul li{
+        display:block;
+        float:left;
+        margin-right:5px;
+    }
+</style>
